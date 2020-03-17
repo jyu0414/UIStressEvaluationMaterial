@@ -29,35 +29,61 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nuW-N7-SF2">
-                                <rect key="frame" x="343" y="44" width="51" height="31"/>
-                            </switch>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zFb-Yo-3cd">
                                 <rect key="frame" x="188.5" y="429.5" width="37" height="37"/>
                             </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SPv-cx-oQK">
+                                <rect key="frame" x="22" y="66" width="370" height="32"/>
+                                <segments>
+                                    <segment title="None"/>
+                                    <segment title="Indicator"/>
+                                    <segment title="Bar"/>
+                                    <segment title="Word"/>
+                                </segments>
+                            </segmentedControl>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculating..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPy-Co-m17">
+                                <rect key="frame" x="149" y="437" width="116" height="22"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView hidden="YES" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="KqR-2m-snh">
+                                <rect key="frame" x="107" y="447" width="200" height="2"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="6Fk-vJ-W82"/>
+                                </constraints>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="eFY-cc-YN4" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="13p-fs-75e"/>
-                            <constraint firstItem="nuW-N7-SF2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4n5-m9-cr7"/>
+                            <constraint firstItem="pPy-Co-m17" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6DG-9z-Yfo"/>
                             <constraint firstItem="z7s-ef-klZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DoE-kb-C6a"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nuW-N7-SF2" secondAttribute="trailing" constant="22" id="P2h-tf-Otb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SPv-cx-oQK" secondAttribute="trailing" constant="22" id="FRm-aN-Pz8"/>
+                            <constraint firstItem="SPv-cx-oQK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="Jgn-al-p6D"/>
                             <constraint firstItem="z7s-ef-klZ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" multiplier="1.6" id="StI-z6-4bE"/>
+                            <constraint firstItem="KqR-2m-snh" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Y2p-y4-GJY"/>
+                            <constraint firstItem="SPv-cx-oQK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="ako-cz-9xL"/>
                             <constraint firstItem="zFb-Yo-3cd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="c5Q-lm-LKI"/>
                             <constraint firstItem="eFY-cc-YN4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="de8-jG-ONc"/>
+                            <constraint firstItem="pPy-Co-m17" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="pHe-Jd-CsL"/>
+                            <constraint firstItem="KqR-2m-snh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tTP-Iz-O6x"/>
                             <constraint firstItem="zFb-Yo-3cd" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="viA-7l-aJh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="indicator" destination="zFb-Yo-3cd" id="1sx-JG-baw"/>
-                        <outlet property="indicatorSwitch" destination="nuW-N7-SF2" id="zec-yl-qxZ"/>
+                        <outlet property="indicatorSwitch" destination="SPv-cx-oQK" id="D6i-Z1-Ach"/>
                         <outlet property="label" destination="eFY-cc-YN4" id="jWo-th-Bm5"/>
+                        <outlet property="progressBar" destination="KqR-2m-snh" id="ofJ-Vw-Pkx"/>
+                        <outlet property="waitingLabel" destination="pPy-Co-m17" id="Rke-Gf-NGi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="138"/>
+            <point key="canvasLocation" x="137.68115942028987" y="137.94642857142856"/>
         </scene>
     </scenes>
 </document>
